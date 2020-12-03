@@ -48,11 +48,8 @@ export class TasksService {
     user: User,
   ): Promise<Task> {
     const task = await this.getTaskById(id, user);
-
     task.status = status;
-
     await task.save();
-
     return task;
   }
 }
